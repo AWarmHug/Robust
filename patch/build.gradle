@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
+apply from: '../gradle_mvn_push.gradle'
+
 project.archivesBaseName = 'robust'
+
 android {
     compileSdkVersion 24
     buildToolsVersion '25.0.2'
@@ -31,7 +34,6 @@ configurations.all {
 }
 dependencies {
 //    compile 'com.meituan.robust:autopatchbase:' + VERSION_NAME
-    compile project(':autopatchbase')
+    implementation project(':autopatchbase')
 }
 
-apply from: '../gradle_mvn_push.gradle'

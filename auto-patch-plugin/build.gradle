@@ -1,4 +1,6 @@
 apply plugin: 'groovy'
+apply from: '../gradle_mvn_push.gradle'
+
 compileGroovy {
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
@@ -9,6 +11,5 @@ dependencies {
     implementation localGroovy()
     implementation 'com.android.tools.build:gradle:3.3.2'
     implementation 'org.javassist:javassist:3.25.0-GA'
-//    compile 'com.meituan.robust:autopatchbase:' + VERSION_NAME
-    implementation project(':autopatchbase')
+    implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
 }

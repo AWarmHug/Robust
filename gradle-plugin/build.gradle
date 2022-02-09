@@ -1,5 +1,6 @@
 apply plugin: 'groovy'
-apply from: '../gradle_mvn_push.gradle'
+apply plugin: 'maven'
+group='com.github.AWarmHug'
 
 compileGroovy {
     sourceCompatibility = 1.7

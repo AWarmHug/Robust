@@ -1,15 +1,16 @@
 apply plugin: 'groovy'
+apply plugin: 'maven'
+group='com.github.AWarmHug'
+
 compileGroovy {
     sourceCompatibility = 1.7
     targetCompatibility = 1.7
 }
 
 dependencies {
-    compile gradleApi()
-    compile localGroovy()
-    compile 'com.android.tools.build:gradle:2.1.0'
-    compile 'org.javassist:javassist:3.20.0-GA'
-//    compile 'com.meituan.robust:autopatchbase:' + VERSION_NAME
-    compile project(':autopatchbase')
+    implementation gradleApi()
+    implementation localGroovy()
+    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation 'org.javassist:javassist:3.25.0-GA'
+    implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
 }
-apply from: '../gradle_mvn_push.gradle'

@@ -5,6 +5,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -46,7 +47,7 @@ public class ReadMapping {
         String line;
         try {
             is = new FileInputStream(Config.mappingFilePath);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(is, "UTF-8"), 1024);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(is, StandardCharsets.UTF_8), 1024);
             // 读取一行，存储于字符串列表中
             line = reader.readLine().trim();
             while (line != null) {

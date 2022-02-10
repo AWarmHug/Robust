@@ -1,5 +1,5 @@
 apply plugin: 'com.android.library'
-apply from: '../gradle_mvn_push.gradle'
+apply plugin: 'maven-publish'
 
 project.archivesBaseName = 'robust'
 
@@ -31,6 +31,23 @@ configurations.all {
 }
 dependencies {
 //    compile 'com.meituan.robust:autopatchbase:' + VERSION_NAME
-    implementation project(':autopatchbase')
+    implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
 }
 
+// Because the components are created only during the afterEvaluate phase, you must
+// configure your publications using the afterEvaluate() lifecycle method.
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                // Applies the component for the release build variant.
+                // You can then customize attributes of the publication as shown below.
+                groupId = 'com.github.AWarmHug'
+                artifactId = 'robust'
+                from components.release
+            }
+
+        }
+    }
+}

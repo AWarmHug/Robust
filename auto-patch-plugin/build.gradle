@@ -12,7 +12,23 @@ tasks.withType(JavaCompile) {
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation 'com.android.tools.build:gradle:7.1.0'
+    implementation 'com.android.tools:common:30.1.1'
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
     implementation 'org.javassist:javassist:3.25.0-GA'
     implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
+}
+
+publishing {
+    publications {
+        // 这个mavenJava可以随便填，只是一个任务名字而已
+        // MavenPublication必须有，这个是调用的任务类
+        mavenJava(MavenPublication) {
+            // 这里头是artifacts的配置信息，不填会采用默认的
+            groupId = 'com.github.AWarmHug'
+            artifactId = 'auto-patch-plugin'
+
+            from components.java
+        }
+    }
 }

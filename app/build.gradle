@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
-apply plugin: robust.gradle.plugin.AutoPatchTransform
+//apply plugin: robust.gradle.plugin.AutoPatchTransform
 //apply plugin: 'auto-patch-plugin'
-//apply plugin: 'robust'
+apply plugin: 'robust'
 
 android {
     compileSdkVersion 30

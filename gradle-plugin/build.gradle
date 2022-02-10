@@ -1,5 +1,5 @@
 apply plugin: 'groovy'
-apply plugin: 'maven'
+apply plugin: 'maven-publish'
 group='com.github.AWarmHug'
 
 compileGroovy {
@@ -9,7 +9,7 @@ compileGroovy {
 dependencies {
     implementation gradleApi()
     implementation localGroovy()
-    implementation 'com.android.tools.build:gradle:3.3.2'
+    implementation 'com.android.tools.build:gradle:7.1.0'
     implementation 'org.javassist:javassist:3.25.0-GA'
     implementation fileTree(dir: "./src/main/libs", include: ['*.jar'])
     implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'

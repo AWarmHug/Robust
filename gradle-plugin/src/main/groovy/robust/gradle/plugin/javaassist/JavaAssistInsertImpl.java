@@ -25,6 +25,7 @@ import javassist.expr.Instanceof;
 import javassist.expr.MethodCall;
 import javassist.expr.NewArray;
 import javassist.expr.NewExpr;
+import robust.gradle.plugin.ConvertUtils;
 import robust.gradle.plugin.InsertcodeStrategy;
 
 
@@ -44,6 +45,9 @@ public class JavaAssistInsertImpl extends InsertcodeStrategy {
         ZipOutputStream outStream = new JarOutputStream(new FileOutputStream(jarFile));
 //        new ForkJoinPool().submit {
         for (CtClass ctClass : box) {
+            if (ConvertUtils.shouldBlockConvert(ctClass.getName())) {
+                continue;
+            }
             if (isNeedInsertClass(ctClass.getName())) {
                 //change class modifier
                 ctClass.setModifiers(AccessFlag.setPublic(ctClass.getModifiers()));

@@ -268,7 +268,7 @@ public class JavaUtils {
         }
         for (String key : memberMappingInfo.keySet())
             System.out.println("key is   " + key + "  value is    " + memberMappingInfo.get(key));
-        System.out.println("");
+        System.out.println("addPatchMethodAndModifiedClass pint over");
     }
 
     public static void printList(List<String> list) {

@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: robust.gradle.plugin.AutoPatchTransform
 //apply plugin: 'auto-patch-plugin'
 //apply plugin: 'robust'
 
@@ -6,7 +7,7 @@ android {
     compileSdkVersion 30
     defaultConfig {
         applicationId "com.meituan.robust.sample"
-        minSdkVersion 9
+        minSdkVersion 14
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -69,5 +70,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.3.1'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'org.javassist:javassist:3.25.0-GA'
+
+    implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
     implementation 'com.github.AWarmHug.Robust:robust:0.4.100.1'
 }

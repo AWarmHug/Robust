@@ -10,11 +10,13 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.0.2'
+        classpath 'com.android.tools.build:gradle:7.1.0'
+        classpath 'com.github.AWarmHug.Robust:gradle-plugin:0.4.101'
+//        classpath 'com.github.AWarmHug.Robust:auto-patch-plugin:0.4.101'
+
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
-        classpath 'me.tatarka.retrolambda.projectlombok:lombok.ast:0.2.3.a2'
     }
     configurations.classpath.exclude group: 'com.android.tools.external.lombok'
 }

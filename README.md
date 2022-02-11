@@ -2,12 +2,12 @@
 
 maven { url 'https://jitpack.io' }
 
-classpath 'com.github.AWarmHug.Robust:gradle-plugin:0.4.103'
+classpath 'com.github.AWarmHug.Robust:gradle-plugin:x.y.z'
 
-classpath 'com.github.AWarmHug.Robust:auto-patch-plugin:0.4.103'
+classpath 'com.github.AWarmHug.Robust:auto-patch-plugin:x.y.z'
 
 
-implementation 'com.github.AWarmHug.Robust:robust:0.4.103'
+implementation 'com.github.AWarmHug.Robust:robust:x.y.z'
 
 
 其他参考[官方](https://github.com/Meituan-Dianping/Robust)

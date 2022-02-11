@@ -31,7 +31,7 @@ configurations.all {
 }
 dependencies {
 //    compile 'com.meituan.robust:autopatchbase:' + VERSION_NAME
-    implementation 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
+    api 'com.github.AWarmHug.Robust:autopatchbase:0.4.100.1'
 }
 
 // Because the components are created only during the afterEvaluate phase, you must
